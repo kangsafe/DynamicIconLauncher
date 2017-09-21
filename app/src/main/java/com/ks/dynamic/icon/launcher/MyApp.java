@@ -15,10 +15,13 @@ import java.util.Calendar;
  */
 
 public class MyApp extends Application {
+    public static Context CONTEXT;
+
     @Override
     public void onCreate() {
         super.onCreate();
         setAlarms();
+        CONTEXT = getApplicationContext();
     }
 
     private void setAlarms() {
