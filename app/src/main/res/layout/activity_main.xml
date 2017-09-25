@@ -19,15 +19,17 @@
         app:layout_constraintVertical_bias="0.032" />
 
     <LinearLayout
-        android:layout_width="138dp"
-        android:layout_height="495dp"
+        android:id="@+id/buttonPanel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="0dp"
         android:orientation="vertical"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
 
         <Button
             android:id="@+id/start"
@@ -40,5 +42,50 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Button" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPanel">
+
+        <TextView
+            android:id="@+id/textViewHomePackage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:id="@+id/numInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:id="@+id/btnSetBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Set badge" />
+
+        <Button
+            android:id="@+id/btnSetBadgeByNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Launch Notification" />
+
+        <Button
+            android:id="@+id/btnRemoveBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Remove badge" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -3,6 +3,9 @@
     package="com.ks.dynamic.icon.launcher">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.action.UNINSTALL_SHORTCUT" />
+
     <application
         android:name=".MyApp"
         android:allowBackup="true"
@@ -95,6 +98,9 @@
             </intent-filter>
         </receiver>
         <activity android:name=".BageActivity" />
+        <service
+            android:name=".BadgeIntentService"
+            android:exported="false" />
     </application>
 
 </manifest>
