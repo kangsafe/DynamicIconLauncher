@@ -5,21 +5,26 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import me.leolin.shortcutbadger.ShortcutBadger;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,5 +137,38 @@ public class MainActivity extends AppCompatActivity {
 //                ) {
 //            System.out.println("-------" + m + "------------");
 //        }
+
+        img = (ImageView) findViewById(R.id.top);
+        img.setOnClickListener(this);
+        List<TypeSelect> operationTypeSelectlist = new ArrayList<>();
+        operationTypeSelectlist.add(new TypeSelect("张三"));
+        operationTypeSelectlist.add(new TypeSelect("李四"));
+        customOperationPopWindow = new CustomOperationPopWindow(this, operationTypeSelectlist);
+        customOperationPopWindow.setOnItemMyListener(new CustomOperationPopWindow.OnItemListener() {
+            @Override
+            public void OnItemListener(int position, TypeSelect typeSelect) {
+                //此处实现列表点击所要进行的操作
+            }
+        });
     }
+
+    CustomOperationPopWindow customOperationPopWindow;
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        switch (id) {
+            case R.id.top: {
+//                if (mPopWindow != null && mPopWindow.isShowing()) {
+//                    mPopWindow.dismiss();
+//                }else {
+//                    showPopupWindow();
+//                }
+                customOperationPopWindow.showPopupWindow(v);
+            }
+            break;
+        }
+    }
+
+    ImageView img;
 }

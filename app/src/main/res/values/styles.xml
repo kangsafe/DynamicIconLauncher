@@ -1,11 +1,25 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="pop_text_style">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="operation_popwindow_anim_style_up">
+        <item name="android:windowEnterAnimation">@anim/popshow_operation_anim_down</item>
+        <item name="android:windowExitAnimation">@anim/pophidden_operation_anim</item>
+    </style>
+
+    <style name="operation_popwindow_anim_style_down">
+        <item name="android:windowEnterAnimation">@anim/popshow_operation_anim_up</item>
+        <item name="android:windowExitAnimation">@anim/pophidden_operation_anim</item>
     </style>
 
 </resources>

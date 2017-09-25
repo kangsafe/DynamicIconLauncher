@@ -53,20 +53,20 @@ public class LauncherUtils {
     public void updateLauncher(int day) {
         Log.i("DAY", day + "");
         int num = day % 5;
-        if (num == 0) {
-            enableComponent(new ComponentName(mContext, MainActivity.class));
-        } else {
-            disableComponent(new ComponentName(mContext, MainActivity.class));
-        }
-        //如果没有，则显示默认图标
-        for (int i = 1; i <= 5; i++) {
-            ComponentName componentName = new ComponentName(mContext, "com.ks.dynamic.icon.launcher.MainActivity" + i);
-            if (num == i) {
-                enableComponent(componentName);
-            } else {
-                disableComponent(componentName);
-            }
-        }
+//        if (num == 0) {
+//            enableComponent(new ComponentName(mContext, MainActivity.class));
+//        } else {
+//            disableComponent(new ComponentName(mContext, MainActivity.class));
+//        }
+//        //如果没有，则显示默认图标
+//        for (int i = 1; i <= 5; i++) {
+//            ComponentName componentName = new ComponentName(mContext, "com.ks.dynamic.icon.launcher.MainActivity" + i);
+//            if (num == i) {
+//                enableComponent(componentName);
+//            } else {
+//                disableComponent(componentName);
+//            }
+//        }
 //        removeShortcut(mContext.getString(R.string.app_name));
 //        if (num > 0) {
 //            int resid = mContext.getResources().getIdentifier("icon_" + num, "mipmap", mContext.getPackageName());
